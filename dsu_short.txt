@@ -1,0 +1,21 @@
+int GET(int x)
+{
+   return (par[x]<0 ? x:par[x]=GET(par[x]));
+}
+int siz(int x)
+{
+return -par[GET(x)];
+}
+bool JOIN(int x,int y)
+{
+    x=GET(x);
+    y= GET(y);
+   if(x==y){return 0;}
+  if(par[x] > par[y])
+  {
+    swap(x,y);
+  }
+  par[x]+=par[y];
+  par[y]=x;
+  return 1;
+}
